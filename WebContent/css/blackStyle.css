@@ -1,0 +1,43 @@
+html, body {
+	height: 98.5%;
+	widht: 100%;
+	font-family: Courier New;
+	font-size: 1em;
+	color: #ffffff;
+	background:#000000;
+}
+
+iframe {
+	height: 100%;
+	width: 100%;
+	border: 0px solid #ffffff;
+}
+
+/* MENU */
+.button {
+	border: 1px solid #ffffff;
+	background: transparent;
+	width: 100%;
+	font-family: Courier New;
+	color: #ffffff;	
+	font-size: 1em;
+}
+
+/* DIVS */
+#whole {
+	height: 100%;
+}
+
+#content {
+	height: 95%;
+}
+
+#bottom {
+	height: 5%;
+}
+
+/* during development */
+div, table {
+	border: 0px solid #ffffff;
+	width: 100%;
+}
