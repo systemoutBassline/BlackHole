@@ -23,7 +23,9 @@
 					<td><a href="chat.jsp" target="blackihole">
 							<button class="button">CHAT</button>
 					</a></td>
-					<td><button class="button">STUFF 3</button></td>
+					<td><a href="throwup.jsp" target="blackihole">
+							<button class="button">THROW UP</button>
+					</a></td>
 					<td><button class="button">STUFF 4</button></td>
 					<td><button class="button">STUFF 5</button></td>
 					<td><button class="button">STUFF 6</button></td>

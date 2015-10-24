@@ -36,8 +36,30 @@ iframe {
 	height: 5%;
 }
 
+/* message board */
+/* div's */
+#composeMsgDiv, #latestMsgDiv {
+	border: 1px solid #ffffff;
+	width: 40%;
+}
+#latestMsgDiv {
+	text-align: center;
+	margin-top: 10px;
+}
+/* input's */
+#input {
+	width: 100%;
+}
+#submitNewMessage {
+}
+/* table's */
+#messageTable td {
+	border: 0px solid #ffffff;
+	width: 100%;
+	padding: 10px;
+}
+
 /* during development */
 div, table {
 	border: 0px solid #ffffff;
-	width: 100%;
 }

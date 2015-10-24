@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 public class TestingHole extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Date timeNow;
-	private String input = "", msg1 = "";
+	private String ajaxInput = "", ajaxResponse = "";
 	private String[] message;
 
 	/**
@@ -37,24 +37,24 @@ public class TestingHole extends HttpServlet {
 		// TODO: dexter respont to hello
 		response.setContentType("text/plain");
 		timeNow = new Date();
-		input = request.getParameter("input");
+		ajaxInput = request.getParameter("input");
 		String newInput = "";
 		
-		newInput = "<b>YOU</b>: " + input;
-		msg1 = manageMessage(newInput);
+		newInput = "<b>YOU</b>: " + ajaxInput;
+		ajaxResponse = manageMessage(newInput);
 
-		if (input.toLowerCase().contains("hello")) {
+		if (ajaxInput.toLowerCase().contains("hello")) {
 			newInput = dexter("hello!");
-			msg1 = manageMessage(newInput);
-		} else if (input.toLowerCase().contains("dex")) {
+			ajaxResponse = manageMessage(newInput);
+		} else if (ajaxInput.toLowerCase().contains("dex")) {
 			newInput = dexter("yes?");
-			msg1 = manageMessage(newInput);
+			ajaxResponse = manageMessage(newInput);
 		}
 
 		PrintWriter out = response.getWriter();
 
-		out.print(msg1);
-		System.out.println(msg1);
+		out.print(ajaxResponse);
+		System.out.println(ajaxResponse);
 	}
 	
 	public String dexter(String input) {

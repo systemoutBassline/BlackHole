@@ -8,15 +8,15 @@ function stopSubmit() {
 function ajaxAsyncRequest(reqURL) {
 	var xmlhttp = getXMLObject();
 	
-	xmlhttp.open("GET", reqURL + "?input="
-			+ document.getElementById("input").value, true);
+	xmlhttp.open("GET", reqURL + "?ajaxInput="
+			+ document.getElementById("ajaxInput").value, true);
 	
-	document.getElementById("input").value = '';
+	document.getElementById("ajaxInput").value = '';
 	
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4) {
 			if (xmlhttp.status == 200) {
-				document.getElementById("msg1").innerHTML = xmlhttp.responseText;
+				document.getElementById("ajaxResponse").innerHTML = xmlhttp.responseText;
 			} else {
 				alert('Something is wrong!');
 			}
