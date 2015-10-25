@@ -1,18 +1,16 @@
-var lastMsg;
-
 function stopSubmit() {
-	ajaxAsyncRequest("TestingHole");
+	ajaxAsyncRequest("ThrowUpServlet");
 	return false;
 }
 // ajax test1, dexter..
 function ajaxAsyncRequest(reqURL) {
 	var xmlhttp = getXMLObject();
-	
-	xmlhttp.open("GET", reqURL + "?ajaxInput="
+
+	xmlhttp.open("POST", reqURL + "?ajaxInput="
 			+ document.getElementById("ajaxInput").value, true);
-	
+
 	document.getElementById("ajaxInput").value = '';
-	
+
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4) {
 			if (xmlhttp.status == 200) {

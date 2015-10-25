@@ -53,10 +53,15 @@ iframe {
 #submitNewMessage {
 }
 /* table's */
-#messageTable td {
+#messageTable {
 	border: 0px solid #ffffff;
 	width: 100%;
+}
+#messageTable td {
 	padding: 10px;
+}
+#messageTable th {
+	color: #4c4c4c;
 }
 
 /* during development */

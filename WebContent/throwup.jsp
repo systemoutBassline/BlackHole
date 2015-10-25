@@ -6,8 +6,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link href="css/blackStyle.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-<script type="text/javascript" src="js/blackScripts.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#submitNewMessage").click(function() {
+			$.ajax({
+				url : "ThrowupServlet",
+				type : "POST",
+				data : {
+					input : $("#input").val()
+				},
+				success : function(result) {
+					$("#latestMsgDiv").html(result);
+				}
+			});
+			$("#input").val('');
+		});
+	});
+	function stopSubmit() {
+		return false;
+	}
+</script>
 <title>throw something up</title>
 </head>
 <body>
@@ -15,17 +35,18 @@
 	: write something
 
 	<div id="composeMsgDiv">
-		<table id="messageTable">
-			<tr>
-				<td><input type="text" id="input" name="newMessage" /></td>
-				<td><input type="button" id="submitNewMessage"
-					name="submitNewMessage" value="post" class="button" /></td>
-			</tr>
-		</table>
+		<form id="throwupForm" action="/ThrowupServlet"
+			onsubmit="return stopSubmit()">
+			<table id="messageTable">
+				<tr>
+					<td><input type="text" id="input" name="input" /></td>
+					<td><input type="button" id="submitNewMessage"
+						name="submitNewMessage" value="post" class="button" /></td>
+				</tr>
+			</table>
+		</form>
 	</div>
-	<div id="latestMsgDiv">
-		<span id="ajaxResponse"></span>
-	</div>
+	<div id="latestMsgDiv"></div>
 
 </body>
 </html>
